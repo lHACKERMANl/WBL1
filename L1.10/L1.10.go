@@ -17,7 +17,12 @@ func main() {
 
 	// Группируем температурные значения
 	for _, temp := range temperatures {
-		groupKey := math.Floor(temp/step) * step // Определяем ключ группы
+		var groupKey float64
+		if temp >= 0 {
+			groupKey = math.Floor(temp/step) * step // Определяем ключ группы при положительном значении
+		} else {
+			groupKey = math.Ceil(temp/step) * step // Определяем ключ группы при отрицательном значении
+		}
 		temperatureGroups[groupKey] = append(temperatureGroups[groupKey], temp)
 	}
 
