@@ -44,7 +44,7 @@ func main() {
 	// Главный поток записывает данные в канал
 	go func() {
 		defer close(dataCh)
-		for i := 0; i < 10; i++ {
+		for i := 0; i < numWorkers; i++ {
 			dataCh <- fmt.Sprintf("Данные %d", i)
 		}
 	}()
