@@ -16,7 +16,7 @@ func someFunc() string {
 	v := createHugeString(1 << 10)
 
 	//освобождаем память
-	result := string([]rune(v)[:100])
+	result := v[:100]
 	v = ""
 
 	// Возвращаем первые 100 символов этой строки
