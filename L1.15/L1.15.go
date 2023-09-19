@@ -15,9 +15,12 @@ func someFunc() string {
 	// Создаем случайную строку определенной длины с помощью функции createHugeString
 	v := createHugeString(1 << 10)
 
-	// Возвращаем первые 100 символов этой строки
-	return string([]rune(v)[:100])
+	//освобождаем память
+	result := string([]rune(v)[:100])
+	v = ""
 
+	// Возвращаем первые 100 символов этой строки
+	return result
 }
 
 func createHugeString(length int) string {
