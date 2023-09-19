@@ -17,7 +17,7 @@ func main() {
 	fmt.Scan(&i)
 
 	if i < 0 || i > 64 {
-		fmt.Errorf("Число должно быть в диапазоне от ")
+		fmt.Errorf("Число должно быть в диапазоне от 0 до 64")
 	}
 
 	setBit := true // Установить бит в 1 (true) или 0 (false)
